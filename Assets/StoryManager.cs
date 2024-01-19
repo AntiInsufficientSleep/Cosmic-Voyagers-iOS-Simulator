@@ -22,6 +22,8 @@ public class StoryManager : MonoBehaviour
 
     public int MessageIndex { get; private set; } = 0;
 
+    private bool isFinishMessage = false;
+
     private void Start()
     {
         SetStoryElement(StoryIndex, MessageIndex);
@@ -29,7 +31,7 @@ public class StoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (isFinishMessage && Input.GetKeyDown(KeyCode.Return))
         {
             if (MessageIndex < storyData[StoryIndex].stories.Count)
             {
@@ -50,7 +52,22 @@ public class StoryManager : MonoBehaviour
         var story = storyData[storyIndex].stories[messageIndex];
 
         background.sprite = story.Background;
-        message.text = story.Message;
         characterName.text = story.CharacterName;
+
+        StartCoroutine(TypeMessage(story.Message));
+    }
+
+    private IEnumerator TypeMessage(string message)
+    {
+        this.message.text = "";
+        isFinishMessage = false;
+
+        foreach (char letter in message.ToCharArray())
+        {
+            this.message.text += letter;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        isFinishMessage = true;
     }
 }
