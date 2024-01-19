@@ -27,6 +27,24 @@ public class StoryManager : MonoBehaviour
         SetStoryElement(StoryIndex, MessageIndex);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (MessageIndex < storyData[StoryIndex].stories.Count)
+            {
+                MessageIndex++;
+            }
+            else
+            {
+                StoryIndex++;
+                MessageIndex = 0;
+            }
+
+            SetStoryElement(StoryIndex, MessageIndex);
+        }
+    }
+
     private void SetStoryElement(int storyIndex, int messageIndex)
     {
         var story = storyData[storyIndex].stories[messageIndex];
