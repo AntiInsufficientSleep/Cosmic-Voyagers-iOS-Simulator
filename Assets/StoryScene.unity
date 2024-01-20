@@ -2748,12 +2748,12 @@ MonoBehaviour:
   characterName: {fileID: 496870861}
   selection2: {fileID: 673275318}
   selection2option1: {fileID: 1603612332}
-  selection2option1text: {fileID: 0}
+  selection2option1text: {fileID: 1849455408}
   selection2option2: {fileID: 1563881259}
   selection2option2text: {fileID: 1004110663}
   selection3: {fileID: 1905790987}
   selection3option1: {fileID: 1569572513}
-  selection3option1text: {fileID: 0}
+  selection3option1text: {fileID: 274651879}
   selection3option2: {fileID: 150490733}
   selection3option2text: {fileID: 1935408211}
   selection3option3: {fileID: 22649059}
