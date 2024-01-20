@@ -69,6 +69,7 @@ public sealed class StoryManager : MonoBehaviour
     public int MessageIndex { get; private set; } = 0;
 
     private bool isFinishMessage = false;
+    private bool isMessageSkipRequested = false;
 
     public void onSelection2Option1Click()
     {
@@ -80,7 +81,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         selection2.SetActive(false);
         SetSecondNextBranch();
-    }   
+    }
 
     public void onSelection3Option1Click()
     {
@@ -98,7 +99,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         selection3.SetActive(false);
         SetThirdNextBranch();
-    }   
+    }
 
     public void onSelection4Option1Click()
     {
@@ -131,16 +132,23 @@ public sealed class StoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (isFinishMessage && Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (MessageIndex < currentChapter.messages.Length - 1)
+            if (isFinishMessage)
             {
-                MessageIndex++;
-                SetMessage();
+                if (MessageIndex < currentChapter.messages.Length - 1)
+                {
+                    MessageIndex++;
+                    SetMessage();
+                }
+                else
+                {
+                    SetNextChapter();
+                }
             }
             else
             {
-                SetNextChapter();
+                isMessageSkipRequested = true;
             }
         }
     }
@@ -253,6 +261,13 @@ public sealed class StoryManager : MonoBehaviour
 
         foreach (char letter in messageContent.ToCharArray())
         {
+            if (isMessageSkipRequested)
+            {
+                message.text = messageContent;
+                isMessageSkipRequested = false;
+                break;
+            }
+
             message.text += letter;
             yield return new WaitForSeconds(0.1f);
         }
