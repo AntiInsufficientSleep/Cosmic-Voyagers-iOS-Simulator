@@ -156,7 +156,17 @@ public sealed class StoryManager : MonoBehaviour
     {
         Message message = currentChapter.messages[MessageIndex];
 
-        characterImage.sprite = message.CharacterImage;
+        Sprite image = message.CharacterImage;
+
+        if (!ReferenceEquals(image, null))
+        {
+            characterImage.sprite = image;
+        }
+        else
+        {
+            Debug.LogError("Character image is null");
+        }
+        
         characterName.text = message.CharacterName;
 
         StartCoroutine(TypeMessage(message.Content));
@@ -167,7 +177,16 @@ public sealed class StoryManager : MonoBehaviour
         MessageIndex = 0;
         currentChapter = chapter;
 
-        background.sprite = chapter.backgroundImage;
+        Sprite image = chapter.backgroundImage;
+
+        if (!ReferenceEquals(image, null))
+        {
+            background.sprite = image;
+        }
+        else
+        {
+            Debug.LogError("Character image is null");
+        }
         
         SetMessage();
     }
