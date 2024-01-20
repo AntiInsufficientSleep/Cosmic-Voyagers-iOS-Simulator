@@ -70,6 +70,60 @@ public sealed class StoryManager : MonoBehaviour
 
     private bool isFinishMessage = false;
 
+    public void onSelection2Option1Click()
+    {
+        selection2.SetActive(false);
+        SetFirstNextBranch();
+    }
+
+    public void onSelection2Option2Click()
+    {
+        selection2.SetActive(false);
+        SetSecondNextBranch();
+    }   
+
+    public void onSelection3Option1Click()
+    {
+        selection3.SetActive(false);
+        SetFirstNextBranch();
+    }
+
+    public void onSelection3Option2Click()
+    {
+        selection3.SetActive(false);
+        SetSecondNextBranch();
+    }
+
+    public void onSelection3Option3Click()
+    {
+        selection3.SetActive(false);
+        SetThirdNextBranch();
+    }   
+
+    public void onSelection4Option1Click()
+    {
+        selection4.SetActive(false);
+        SetFirstNextBranch();
+    }
+
+    public void onSelection4Option2Click()
+    {
+        selection4.SetActive(false);
+        SetSecondNextBranch();
+    }
+
+    public void onSelection4Option3Click()
+    {
+        selection4.SetActive(false);
+        SetThirdNextBranch();
+    }
+
+    public void onSelection4Option4Click()
+    {
+        selection4.SetActive(false);
+        SetFourthNextBranch();
+    }
+
     private void Start()
     {
         SetMessage();
@@ -103,24 +157,89 @@ public sealed class StoryManager : MonoBehaviour
         StartCoroutine(TypeMessage(message.Content));
     }
 
+    private void SetCurrentChapter(Chapter chapter)
+    {
+        MessageIndex = 0;
+        currentChapter = chapter;
+        SetMessage();
+    }
+
+    private void SetFirstNextBranch()
+    {
+        if (currentChapter.nextBranches.Length < 1)
+        {
+            Debug.LogError("Unexpected number of next chapters");
+            return;
+        }
+
+        SetCurrentChapter(currentChapter.nextBranches[0].chapter);
+    }
+
+    private void SetSecondNextBranch()
+    {
+        if (currentChapter.nextBranches.Length < 2)
+        {
+            Debug.LogError("Unexpected number of next chapters");
+            return;
+        }
+
+        SetCurrentChapter(currentChapter.nextBranches[1].chapter);
+    }
+
+    private void SetThirdNextBranch()
+    {
+        if (currentChapter.nextBranches.Length < 3)
+        {
+            Debug.LogError("Unexpected number of next chapters");
+            return;
+        }
+
+        SetCurrentChapter(currentChapter.nextBranches[2].chapter);
+    }
+
+    private void SetFourthNextBranch()
+    {
+        if (currentChapter.nextBranches.Length < 4)
+        {
+            Debug.LogError("Unexpected number of next chapters");
+            return;
+        }
+
+        SetCurrentChapter(currentChapter.nextBranches[3].chapter);
+    }
+
     private void SetNextChapter()
     {
         switch (currentChapter.nextBranches.Length)
         {
             case 0:
-                return;
+                break;
+
             case 1:
-                MessageIndex = 0;
-                currentChapter = currentChapter.nextBranches[0].chapter;
-                SetMessage();
+                SetCurrentChapter(currentChapter.nextBranches[0].chapter);
                 break;
+
             case 2:
-                
+                selection2.SetActive(true);
+                selection2option1text.text = currentChapter.nextBranches[0].choiceMessage;
+                selection2option2text.text = currentChapter.nextBranches[1].choiceMessage;
                 break;
+
             case 3:
+                selection3.SetActive(true);
+                selection3option1text.text = currentChapter.nextBranches[0].choiceMessage;
+                selection3option2text.text = currentChapter.nextBranches[1].choiceMessage;
+                selection3option3text.text = currentChapter.nextBranches[2].choiceMessage;
                 break;
+
             case 4:
+                selection4.SetActive(true);
+                selection4option1text.text = currentChapter.nextBranches[0].choiceMessage;
+                selection4option2text.text = currentChapter.nextBranches[1].choiceMessage;
+                selection4option3text.text = currentChapter.nextBranches[2].choiceMessage;
+                selection4option4text.text = currentChapter.nextBranches[3].choiceMessage;
                 break;
+
             default:
                 Debug.LogError("Unexpected number of next chapters");
                 break;
