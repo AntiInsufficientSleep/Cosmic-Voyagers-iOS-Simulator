@@ -126,7 +126,7 @@ public sealed class StoryManager : MonoBehaviour
 
     private void Start()
     {
-        SetMessage();
+        SetCurrentChapter(currentChapter);
     }
 
     private void Update()
