@@ -2557,10 +2557,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ae76f2d86681f4dbed827686c43e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyData: []
-  background: {fileID: 0}
-  message: {fileID: 0}
-  characterName: {fileID: 0}
+  currentChapter: {fileID: 0}
+  background: {fileID: 1885092610}
+  characterImage: {fileID: 0}
+  message: {fileID: 542765647}
+  characterName: {fileID: 496870861}
+  Selection2: {fileID: 673275318}
+  Selection3: {fileID: 1905790987}
+  Selection4: {fileID: 901368885}
 --- !u!1 &1837906153
 GameObject:
   m_ObjectHideFlags: 0
