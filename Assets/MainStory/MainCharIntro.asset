@@ -29,4 +29,6 @@ MonoBehaviour:
   - CharacterImage: {fileID: 21300000, guid: 84607f373a0ef9c46ba215d93570c8cf, type: 3}
     Content: "\u3055\u3042\u3001\u661F\u3005\u306E\u5F7C\u65B9\u3078\u3001\u65C5\u7ACB\u3068\u3046\u3002"
     CharacterName: "\u4E3B\u4EBA\u516C"
-  nextBranches: []
+  nextBranches:
+  - choiceMessage: 
+    chapter: {fileID: 11400000, guid: 12aa3ce694395ac4cb0b0dfc445180c5, type: 2}
