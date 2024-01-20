@@ -23,4 +23,10 @@ MonoBehaviour:
   - CharacterImage: {fileID: 0}
     Content: 'Third Chapter: Branch 1: Message 3'
     CharacterName: A
-  nextBranches: []
+  nextBranches:
+  - choiceMessage: 'Forth Chapter: Branch 1'
+    chapter: {fileID: 11400000, guid: 038068b6771f95249a3ef6c555f22806, type: 2}
+  - choiceMessage: 'Forth Chapter: Branch 2'
+    chapter: {fileID: 11400000, guid: d2c29dfdfd3908b459d340092886002d, type: 2}
+  - choiceMessage: 'Forth Chapter: Branch 3'
+    chapter: {fileID: 11400000, guid: bb80b2f61df06a3458fc2040fce39887, type: 2}
