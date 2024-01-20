@@ -49,7 +49,7 @@ public class StoryManager : MonoBehaviour
 
     private void SetStoryElement(int storyIndex, int messageIndex)
     {
-        var story = storyData[storyIndex].stories[messageIndex];
+        Story story = storyData[storyIndex].stories[messageIndex];
 
         background.sprite = story.Background;
         characterName.text = story.CharacterName;
