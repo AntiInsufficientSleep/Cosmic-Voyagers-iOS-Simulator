@@ -156,8 +156,6 @@ public sealed class StoryManager : MonoBehaviour
     {
         Message message = currentChapter.messages[MessageIndex];
 
-        background.sprite = currentChapter.backgroundImage;
-
         characterImage.sprite = message.CharacterImage;
         characterName.text = message.CharacterName;
 
@@ -168,6 +166,9 @@ public sealed class StoryManager : MonoBehaviour
     {
         MessageIndex = 0;
         currentChapter = chapter;
+
+        background.sprite = chapter.backgroundImage;
+        
         SetMessage();
     }
 
