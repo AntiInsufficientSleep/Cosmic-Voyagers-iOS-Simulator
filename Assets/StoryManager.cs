@@ -33,7 +33,7 @@ public class StoryManager : MonoBehaviour
     {
         if (isFinishMessage && Input.GetKeyDown(KeyCode.Return))
         {
-            if (MessageIndex < storyData[StoryIndex].stories.Count)
+            if (MessageIndex < storyData[StoryIndex].stories.Length)
             {
                 MessageIndex++;
             }
