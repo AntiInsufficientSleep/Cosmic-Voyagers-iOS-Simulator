@@ -149,7 +149,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         Message message = currentChapter.messages[MessageIndex];
 
-        background.sprite = currentChapter.backgroundImage;
+        // background.sprite = currentChapter.backgroundImage;
 
         characterImage.sprite = message.CharacterImage;
         characterName.text = message.CharacterName;
