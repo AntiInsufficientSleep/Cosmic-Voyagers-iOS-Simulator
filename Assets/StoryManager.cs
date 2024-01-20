@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public sealed class StoryManager : MonoBehaviour
 {
     [SerializeField]
-    private Chapter[] chapters;
+    private Chapter currentChapter;
 
     [SerializeField]
     private Image background;
@@ -22,13 +22,49 @@ public sealed class StoryManager : MonoBehaviour
     private TextMeshProUGUI characterName;
 
     [SerializeField]
-    private GameObject Selection2;
+    private GameObject selection2;
     [SerializeField]
-    private GameObject Selection3;
+    private Button selection2option1;
     [SerializeField]
-    private GameObject Selection4;
+    private TextMeshProUGUI selection2option1text;
+    [SerializeField]
+    private Button selection2option2;
+    [SerializeField]
+    private TextMeshProUGUI selection2option2text;
 
-    public int ChapterIndex { get; private set; } = 0;
+    [SerializeField]
+    private GameObject selection3;
+    [SerializeField]
+    private Button selection3option1;
+    [SerializeField]
+    private TextMeshProUGUI selection3option1text;
+    [SerializeField]
+    private Button selection3option2;
+    [SerializeField]
+    private TextMeshProUGUI selection3option2text;
+    [SerializeField]
+    private Button selection3option3;
+    [SerializeField]
+    private TextMeshProUGUI selection3option3text;
+
+    [SerializeField]
+    private GameObject selection4;
+    [SerializeField]
+    private Button selection4option1;
+    [SerializeField]
+    private TextMeshProUGUI selection4option1text;
+    [SerializeField]
+    private Button selection4option2;
+    [SerializeField]
+    private TextMeshProUGUI selection4option2text;
+    [SerializeField]
+    private Button selection4option3;
+    [SerializeField]
+    private TextMeshProUGUI selection4option3text;
+    [SerializeField]
+    private Button selection4option4;
+    [SerializeField]
+    private TextMeshProUGUI selection4option4text;
 
     public int MessageIndex { get; private set; } = 0;
 
@@ -43,31 +79,52 @@ public sealed class StoryManager : MonoBehaviour
     {
         if (isFinishMessage && Input.GetKeyDown(KeyCode.Return))
         {
-            if (MessageIndex < chapters[ChapterIndex].messages.Length)
+            if (MessageIndex < currentChapter.messages.Length)
             {
                 MessageIndex++;
+                SetMessage();
             }
             else
             {
-                ChapterIndex++;
-                MessageIndex = 0;
+                SetNextChapter();
             }
-
-            SetMessage();
         }
     }
 
     private void SetMessage()
     {
-        Chapter chapter = chapters[ChapterIndex];
-        Message message = chapter.messages[MessageIndex];
+        Message message = currentChapter.messages[MessageIndex];
 
-        background.sprite = chapter.BackgroundImage;
+        background.sprite = currentChapter.backgroundImage;
 
         characterImage.sprite = message.CharacterImage;
         characterName.text = message.CharacterName;
 
         StartCoroutine(TypeMessage(message.Content));
+    }
+
+    private void SetNextChapter()
+    {
+        switch (currentChapter.nextBranches.Length)
+        {
+            case 0:
+                return;
+            case 1:
+                MessageIndex = 0;
+                currentChapter = currentChapter.nextBranches[0].chapter;
+                SetMessage();
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                Debug.LogError("Unexpected number of next chapters");
+                break;
+        }
     }
 
     private IEnumerator TypeMessage(string messageContent)
