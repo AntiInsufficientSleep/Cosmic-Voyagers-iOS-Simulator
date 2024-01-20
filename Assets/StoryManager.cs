@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StoryManager : MonoBehaviour
+public sealed class StoryManager : MonoBehaviour
 {
     [SerializeField]
     private Chapter[] chapters;
