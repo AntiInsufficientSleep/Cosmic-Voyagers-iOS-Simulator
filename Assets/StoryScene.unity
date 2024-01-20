@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 22649060}
   - component: {fileID: 22649059}
   m_Layer: 5
-  m_Name: Option3
+  m_Name: Selection3Option3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 88236372}
   - component: {fileID: 88236371}
   m_Layer: 5
-  m_Name: Option2
+  m_Name: Selection4Option2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 150490734}
   - component: {fileID: 150490733}
   m_Layer: 5
-  m_Name: Option2
+  m_Name: Selection3Option2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 274651880}
   - component: {fileID: 274651879}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Selection3Option1Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 496870862}
   - component: {fileID: 496870861}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ChapterNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1002,7 +1002,7 @@ GameObject:
   - component: {fileID: 542765648}
   - component: {fileID: 542765647}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MessageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 602372925}
   - component: {fileID: 602372924}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Selection3Option3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1307,7 +1307,7 @@ GameObject:
   - component: {fileID: 851577807}
   - component: {fileID: 851577806}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Selection4Option1Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1438,6 +1438,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 901368886}
+  - component: {fileID: 901368887}
   m_Layer: 5
   m_Name: Selection4
   m_TagString: Untagged
@@ -1468,6 +1469,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 502.86517}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &901368887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901368885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20a6933c7c9d84418c665a9d0eaa468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &946416968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1531,7 @@ GameObject:
   - component: {fileID: 1004110664}
   - component: {fileID: 1004110663}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Selection2Option2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1653,7 +1666,7 @@ GameObject:
   - component: {fileID: 1243767112}
   - component: {fileID: 1243767111}
   m_Layer: 5
-  m_Name: Option4
+  m_Name: Selection4Option4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1774,7 +1787,7 @@ GameObject:
   - component: {fileID: 1448261742}
   - component: {fileID: 1448261741}
   m_Layer: 5
-  m_Name: Option3
+  m_Name: Selection4Option3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1894,7 +1907,7 @@ GameObject:
   - component: {fileID: 1546849246}
   - component: {fileID: 1546849245}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Selection4Option2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2029,7 +2042,7 @@ GameObject:
   - component: {fileID: 1563881260}
   - component: {fileID: 1563881259}
   m_Layer: 5
-  m_Name: Option2
+  m_Name: Selection2Option2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2150,7 +2163,7 @@ GameObject:
   - component: {fileID: 1569572514}
   - component: {fileID: 1569572513}
   m_Layer: 5
-  m_Name: Option1
+  m_Name: Selection3Option1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2270,7 +2283,7 @@ GameObject:
   - component: {fileID: 1593475643}
   - component: {fileID: 1593475642}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Selection4Option4Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2405,7 +2418,7 @@ GameObject:
   - component: {fileID: 1603612333}
   - component: {fileID: 1603612332}
   m_Layer: 5
-  m_Name: Option1
+  m_Name: Selection2Option1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2562,9 +2575,27 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   message: {fileID: 542765647}
   characterName: {fileID: 496870861}
-  Selection2: {fileID: 673275318}
-  Selection3: {fileID: 1905790987}
-  Selection4: {fileID: 901368885}
+  selection2: {fileID: 673275318}
+  selection2option1: {fileID: 1603612332}
+  selection2option1text: {fileID: 0}
+  selection2option2: {fileID: 1563881259}
+  selection2option2text: {fileID: 1004110663}
+  selection3: {fileID: 1905790987}
+  selection3option1: {fileID: 1569572513}
+  selection3option1text: {fileID: 0}
+  selection3option2: {fileID: 150490733}
+  selection3option2text: {fileID: 1935408211}
+  selection3option3: {fileID: 22649059}
+  selection3option3text: {fileID: 602372924}
+  selection4: {fileID: 901368885}
+  selection4option1: {fileID: 1896905761}
+  selection4option1text: {fileID: 851577806}
+  selection4option2: {fileID: 88236371}
+  selection4option2text: {fileID: 1546849245}
+  selection4option3: {fileID: 1448261741}
+  selection4option3text: {fileID: 1935187434}
+  selection4option4: {fileID: 1243767111}
+  selection4option4text: {fileID: 1593475642}
 --- !u!1 &1837906153
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,7 +2712,7 @@ GameObject:
   - component: {fileID: 1849455409}
   - component: {fileID: 1849455408}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Selection2Option1Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2968,7 +2999,7 @@ GameObject:
   - component: {fileID: 1896905762}
   - component: {fileID: 1896905761}
   m_Layer: 5
-  m_Name: Option1
+  m_Name: Selection4Option1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3085,6 +3116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1905790988}
+  - component: {fileID: 1905790989}
   m_Layer: 5
   m_Name: Selection3
   m_TagString: Untagged
@@ -3114,6 +3146,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 502.86517}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1905790989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905790987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb98ee0efb8ae64a8205f0d8133c491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1935187432
 GameObject:
   m_ObjectHideFlags: 0
@@ -3126,7 +3170,7 @@ GameObject:
   - component: {fileID: 1935187435}
   - component: {fileID: 1935187434}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Selection4Option3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3260,7 +3304,7 @@ GameObject:
   - component: {fileID: 1935408212}
   - component: {fileID: 1935408211}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Selection3Option2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
