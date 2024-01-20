@@ -133,7 +133,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         if (isFinishMessage && Input.GetKeyDown(KeyCode.Return))
         {
-            if (MessageIndex < currentChapter.messages.Length)
+            if (MessageIndex < currentChapter.messages.Length - 1)
             {
                 MessageIndex++;
                 SetMessage();
