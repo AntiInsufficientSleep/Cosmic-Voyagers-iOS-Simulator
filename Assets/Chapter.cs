@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewChapter", menuName = "Chapter", order = 0)]
 public sealed class Chapter : ScriptableObject
 {
-    public Sprite BackgroundImage;
+    public Sprite backgroundImage;
     public Message[] messages;
+    public Branch[] nextBranches;
 }
 
