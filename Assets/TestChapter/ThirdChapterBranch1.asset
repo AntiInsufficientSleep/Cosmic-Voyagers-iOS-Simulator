@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a353567e2ed9d84296aaec07e2db7d4, type: 3}
   m_Name: ThirdChapterBranch1
   m_EditorClassIdentifier: 
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: ef28b2727dbd04544bedafd3277587fa, type: 3}
   messages:
   - CharacterImage: {fileID: 0}
     Content: 'Third Chapter: Branch 1: Message 1'
