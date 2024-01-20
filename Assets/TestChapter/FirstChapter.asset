@@ -26,5 +26,3 @@ MonoBehaviour:
   nextBranches:
   - choiceMessage: 'Secnod Chapter: Branch 1'
     chapter: {fileID: 11400000, guid: dbe9dd9f714b4e041b13aab01adc9519, type: 2}
-  - choiceMessage: 'Secnod Chapter: Branch 1'
-    chapter: {fileID: 0}
