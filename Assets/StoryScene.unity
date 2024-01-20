@@ -2666,7 +2666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ae76f2d86681f4dbed827686c43e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentChapter: {fileID: 0}
+  currentChapter: {fileID: 11400000, guid: d8f71a8aa5a7a0e40acccc9e1c6f29c5, type: 2}
   background: {fileID: 1885092610}
   characterImage: {fileID: 0}
   message: {fileID: 542765647}
