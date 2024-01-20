@@ -5,14 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewData", menuName = "StoryData", order = 0)]
 public sealed class StoryData : ScriptableObject
 {
+    public Sprite BackgroundImage;
     public Story[] stories;
 }
 
 [System.Serializable]
 public sealed class Story
 {
-    public Sprite Background;
+    public Sprite CharacterImage;
+
     [TextArea]
-    public string Message = "";
+    public string Message = "";    
     public string CharacterName = "";
 }
