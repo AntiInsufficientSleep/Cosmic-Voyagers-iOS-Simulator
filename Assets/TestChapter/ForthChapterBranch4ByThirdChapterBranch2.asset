@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: ForthChapterBranch4ByThirdChapterBranch2
   m_EditorClassIdentifier: 
   backgroundImage: {fileID: 0}
-  messages: []
+  messages:
+  - CharacterImage: {fileID: 0}
+    Content: 'Forth Chapter: Branch 4: Message 1: By Third Chapter Branch 2'
+    CharacterName: A
   nextBranches: []
