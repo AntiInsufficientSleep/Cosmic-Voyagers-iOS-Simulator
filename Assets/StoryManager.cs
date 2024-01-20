@@ -13,6 +13,9 @@ public class StoryManager : MonoBehaviour
     private Image background;
 
     [SerializeField]
+    private Image characterImage;
+
+    [SerializeField]
     private TextMeshProUGUI message;
 
     [SerializeField]
@@ -52,7 +55,9 @@ public class StoryManager : MonoBehaviour
         Story story = storyData[storyIndex].stories[messageIndex];
 
         background.sprite = story.Background;
+        characterImage.sprite = story.CharacterImage;
         characterName.text = story.CharacterName;
+        message.text = story.Message;
 
         StartCoroutine(TypeMessage(story.Message));
     }
