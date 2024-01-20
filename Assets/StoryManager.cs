@@ -7,10 +7,13 @@ using UnityEngine.UI;
 public class StoryManager : MonoBehaviour
 {
     [SerializeField]
-    private StoryData[] storyData;
+    private Chapter[] chapters;
 
     [SerializeField]
     private Image background;
+
+    [SerializeField]
+    private Image characterImage;
 
     [SerializeField]
     private TextMeshProUGUI message;
@@ -18,7 +21,14 @@ public class StoryManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI characterName;
 
-    public int StoryIndex { get; private set; } = 0;
+    [SerializeField]
+    private GameObject Selection2;
+    [SerializeField]
+    private GameObject Selection3;
+    [SerializeField]
+    private GameObject Selection4;
+
+    public int ChapterIndex { get; private set; } = 0;
 
     public int MessageIndex { get; private set; } = 0;
 
@@ -26,45 +36,48 @@ public class StoryManager : MonoBehaviour
 
     private void Start()
     {
-        SetStoryElement(StoryIndex, MessageIndex);
+        SetMessage();
     }
 
     private void Update()
     {
         if (isFinishMessage && Input.GetKeyDown(KeyCode.Return))
         {
-            if (MessageIndex < storyData[StoryIndex].stories.Length)
+            if (MessageIndex < chapters[ChapterIndex].messages.Length)
             {
                 MessageIndex++;
             }
             else
             {
-                StoryIndex++;
+                ChapterIndex++;
                 MessageIndex = 0;
             }
 
-            SetStoryElement(StoryIndex, MessageIndex);
+            SetMessage();
         }
     }
 
-    private void SetStoryElement(int storyIndex, int messageIndex)
+    private void SetMessage()
     {
-        Story story = storyData[storyIndex].stories[messageIndex];
+        Chapter chapter = chapters[ChapterIndex];
+        Message message = chapter.messages[MessageIndex];
 
-        background.sprite = story.Background;
-        characterName.text = story.CharacterName;
+        background.sprite = chapter.BackgroundImage;
 
-        StartCoroutine(TypeMessage(story.Message));
+        characterImage.sprite = message.CharacterImage;
+        characterName.text = message.CharacterName;
+
+        StartCoroutine(TypeMessage(message.Content));
     }
 
-    private IEnumerator TypeMessage(string message)
+    private IEnumerator TypeMessage(string messageContent)
     {
-        this.message.text = "";
+        message.text = "";
         isFinishMessage = false;
 
-        foreach (char letter in message.ToCharArray())
+        foreach (char letter in messageContent.ToCharArray())
         {
-            this.message.text += letter;
+            message.text += letter;
             yield return new WaitForSeconds(0.1f);
         }
 
