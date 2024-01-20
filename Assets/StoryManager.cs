@@ -158,7 +158,7 @@ public sealed class StoryManager : MonoBehaviour
 
         background.sprite = currentChapter.backgroundImage;
 
-        // characterImage.sprite = message.CharacterImage;
+        characterImage.sprite = message.CharacterImage;
         characterName.text = message.CharacterName;
 
         StartCoroutine(TypeMessage(message.Content));
