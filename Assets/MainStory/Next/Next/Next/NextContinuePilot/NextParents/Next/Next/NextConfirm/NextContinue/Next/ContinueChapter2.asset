@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ContinueChapter2
   m_EditorClassIdentifier: 
   backgroundImage: {fileID: 21300000, guid: 3f090cc529c56f14ba10bf911bbd4fbc, type: 3}
-  backGroundMusic: {fileID: 0}
+  backGroundMusic: {fileID: 8300000, guid: 3c9ab629b1e78ea46ae139711fc48309, type: 3}
   messages:
   - CharacterImage: {fileID: 21300000, guid: 68ce0bea5ed7e174cbb574b0bb5c816c, type: 3}
     Content: "\u3053\u308C\u307E\u3067\u306E\u7D4C\u9A13\u304C\u3001\u65B0\u3057\u3044\u4EFB\u52D9\u3078\u306E\u6E96\u5099\u3060\u3063\u305F\u3093\u3060\u3002\u672A\u77E5\u306E\u9818\u57DF\u3078\u306E\u5192\u967A\u3001\u305D\u308C\u304C\u50D5\u306E\u6B21\u306A\u308B\u30B9\u30C6\u30FC\u30B8\u3060\u3002\u3055\u3042\u3001\u661F\u3005\u306E\u5F7C\u65B9\u3078\uFF01"
