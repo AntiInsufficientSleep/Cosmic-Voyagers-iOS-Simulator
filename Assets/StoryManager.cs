@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public sealed class StoryManager : MonoBehaviour
 {
+    private static WaitForSeconds delay = new(0.1f);
+    
     private Chapter previousChapter;
     [SerializeField]
     private Chapter currentChapter;
@@ -330,7 +332,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         while (!isFinishMessage)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return delay;
         }
 
         message.text = "";
@@ -352,7 +354,7 @@ public sealed class StoryManager : MonoBehaviour
             }
 
             message.text += letter;
-            yield return new WaitForSeconds(0.1f);
+            yield return delay;
         }
 
         isFinishMessage = true;
