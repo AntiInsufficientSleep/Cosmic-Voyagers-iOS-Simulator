@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "BGM \u30AA\u30F3\uFF0F\u30AA\u30D5"
+  m_text: "BGM \u30AA\u30D5"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1794faf1d6d76f49ac8bb4043cc48be, type: 2}
   m_sharedMaterial: {fileID: -1471750096492094730, guid: c1794faf1d6d76f49ac8bb4043cc48be, type: 2}
@@ -1459,7 +1459,7 @@ GameObject:
   - component: {fileID: 490593447}
   - component: {fileID: 490593446}
   m_Layer: 5
-  m_Name: SwitchBGM
+  m_Name: BgmToggleButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1531,7 +1531,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1823231984}
         m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
-        m_MethodName: SwitchBGM
+        m_MethodName: SwitchBgm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4448,6 +4448,7 @@ MonoBehaviour:
   pauseButton: {fileID: 1917885412}
   pauseMenu: {fileID: 72457782}
   mainCharNameInputField: {fileID: 225295213}
+  bgmToggleButtonText: {fileID: 249313475}
   selection2: {fileID: 673275318}
   selection2option1text: {fileID: 1849455408}
   selection2option2text: {fileID: 1004110663}
@@ -4580,7 +4581,7 @@ GameObject:
   - component: {fileID: 1845066889}
   - component: {fileID: 1845066888}
   m_Layer: 0
-  m_Name: BGMPlayer
+  m_Name: BgmPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5214,9 +5215,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.93333334}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.8627451}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.98039216}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0.65882355}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1

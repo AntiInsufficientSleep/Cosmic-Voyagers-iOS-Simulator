@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public sealed class StoryManager : MonoBehaviour
 {
-    private static WaitForSeconds delay = new(0.1f);
+    private static readonly WaitForSeconds delay = new(0.1f);
+    private const string bgmOnText = "BGM オン";
+    private const string bgmOffText = "BGM オフ";
 
     private Chapter previousChapter;
     [SerializeField]
@@ -31,6 +33,9 @@ public sealed class StoryManager : MonoBehaviour
 
     [SerializeField]
     private TMP_InputField mainCharNameInputField;
+
+    [SerializeField]
+    private TextMeshProUGUI bgmToggleButtonText;
 
     [SerializeField]
     private GameObject selection2;
@@ -70,8 +75,8 @@ public sealed class StoryManager : MonoBehaviour
     private bool isMessageSkipRequested = false;
     private bool isMessageInterrupted = false;
     private bool isNextMessageRequested = false;
-    private bool isBGMOn = true;
-    private bool isBGMNull = true;
+    private bool isBgmOn = true;
+    private bool isBGgmull = true;
 
     public void onSelection2Option1Click()
     {
@@ -143,22 +148,24 @@ public sealed class StoryManager : MonoBehaviour
         }
     }
 
-    public void SwitchBGM()
+    public void SwitchBgm()
     {
-        isBGMOn = !isBGMOn;
+        isBgmOn = !isBgmOn;
 
-        if (isBGMNull)
+        if (isBGgmull)
         {
             return;
         }
 
-        if (isBGMOn)
+        if (isBgmOn)
         {
             audioSource.Play();
+            bgmToggleButtonText.text = bgmOffText;
         }
         else
         {
             audioSource.Stop();
+            bgmToggleButtonText.text = bgmOnText;
         }
     }
 
@@ -265,17 +272,17 @@ public sealed class StoryManager : MonoBehaviour
 
         if (!ReferenceEquals(audioClip, null))
         {
-            isBGMNull = false;
+            isBGgmull = false;
             audioSource.clip = audioClip;
 
-            if (isBGMOn)
+            if (isBgmOn)
             {
                 audioSource.Play();
             }
         }
         else
         {
-            isBGMNull = true;
+            isBGgmull = true;
             Debug.LogError("Background music is null");
             audioSource.Stop();
         }
