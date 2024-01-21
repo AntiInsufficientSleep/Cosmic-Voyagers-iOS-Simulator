@@ -3588,8 +3588,8 @@ MonoBehaviour:
   characterImage: {fileID: 105165572}
   message: {fileID: 542765647}
   characterName: {fileID: 496870861}
-  pauseButton: {fileID: 0}
-  pauseMenu: {fileID: 0}
+  pauseButton: {fileID: 1917885412}
+  pauseMenu: {fileID: 72457782}
   selection2: {fileID: 673275318}
   selection2option1: {fileID: 1603612332}
   selection2option1text: {fileID: 1849455408}
