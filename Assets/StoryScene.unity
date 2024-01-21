@@ -271,7 +271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &72457783
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1342,7 +1342,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1823231984}
         m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
-        m_MethodName: GoBack
+        m_MethodName: SwitchBGM
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
