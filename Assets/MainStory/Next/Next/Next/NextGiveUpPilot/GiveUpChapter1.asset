@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GiveUpChapter1
   m_EditorClassIdentifier: 
   backgroundImage: {fileID: 21300000, guid: e975fd49663698f40adaadf37a09ff52, type: 3}
-  backGroundMusic: {fileID: 0}
+  backGroundMusic: {fileID: 8300000, guid: 3c9ab629b1e78ea46ae139711fc48309, type: 3}
   messages:
   - CharacterImage: {fileID: 21300000, guid: 68ce0bea5ed7e174cbb574b0bb5c816c, type: 3}
     Content: "\u5B87\u5B99\u306F\u5E83\u3044\u3051\u3069\u3001\u4EBA\u306E\u5FC3\u306E\u4E2D\u306F\u3082\u3063\u3068\u5927\u304D\u306A\u5B87\u5B99\u304C\u5E83\u304C\u3063\u3066\u3044\u308B\u3002\u50D5\u306F\u3001\u305D\u306E\u5185\u9762\u306E\u63A2\u7D22\u3092\u9078\u3076\u3088\u3002"
