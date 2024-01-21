@@ -64,6 +64,9 @@ public sealed class StoryManager : MonoBehaviour
     private Button selection4option4;
     [SerializeField]
     private TextMeshProUGUI selection4option4text;
+    
+    [SerializeField]
+    private AudioSource audioSource;
 
     public int MessageIndex { get; private set; } = 0;
 
@@ -186,6 +189,19 @@ public sealed class StoryManager : MonoBehaviour
         else
         {
             Debug.LogError("Character image is null");
+        }
+
+        AudioClip audioClip = chapter.backGroundMusic;
+
+        if (!ReferenceEquals(audioClip, null))
+        {
+            audioSource.clip = audioClip;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogError("Background music is null");
+            audioSource.Stop();
         }
         
         SetMessage();

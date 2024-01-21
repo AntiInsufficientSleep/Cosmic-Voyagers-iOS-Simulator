@@ -5,7 +5,7 @@ using UnityEngine;
 public sealed class Chapter : ScriptableObject
 {
     public Sprite backgroundImage;
-    public AudioSource backGroundMusic;
+    public AudioClip backGroundMusic;
     public Message[] messages;
     public Branch[] nextBranches = Array.Empty<Branch>();
 }
