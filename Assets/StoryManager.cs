@@ -79,6 +79,8 @@ public sealed class StoryManager : MonoBehaviour
 
     public int MessageIndex { get; private set; } = 0;
 
+    public string MainCharacterName { get; set; } = "けんと";
+
     private bool isFinishMessage = true;
     private bool isMessageSkipRequested = false;
     private bool isMessageInterrupted = false;
@@ -247,9 +249,9 @@ public sealed class StoryManager : MonoBehaviour
             Debug.LogError("Character image is null");
         }
 
-        characterName.text = message.CharacterName;
+        characterName.text = message.CharacterName.Replace("主人公", MainCharacterName);
 
-        StartCoroutine(TypeMessage(message.Content));
+        StartCoroutine(TypeMessage(message.Content.Replace("[主人公の名前]", MainCharacterName)));
     }
 
     private void SetCurrentChapter(Chapter chapter)
