@@ -22,6 +22,12 @@ public sealed class StoryManager : MonoBehaviour
     private TextMeshProUGUI characterName;
 
     [SerializeField]
+    private GameObject pauseButton;
+
+    [SerializeField]
+    private GameObject pauseMenu;
+
+    [SerializeField]
     private GameObject selection2;
     [SerializeField]
     private Button selection2option1;
@@ -133,10 +139,14 @@ public sealed class StoryManager : MonoBehaviour
         if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
+            pauseButton.SetActive(false);
+            pauseMenu.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
+            pauseButton.SetActive(true);
+            pauseMenu.SetActive(false);
         }
     }
 
@@ -156,7 +166,7 @@ public sealed class StoryManager : MonoBehaviour
         {
             return;
         }
-        
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (isFinishMessage)
