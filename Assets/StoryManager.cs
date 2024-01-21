@@ -10,6 +10,7 @@ public sealed class StoryManager : MonoBehaviour
     private const string bgmOffText = "BGM オフ";
 
     private Chapter previousChapter;
+
     [SerializeField]
     private Chapter currentChapter;
 
@@ -31,7 +32,6 @@ public sealed class StoryManager : MonoBehaviour
     [SerializeField]
     private GameObject pauseMenu;
 
-    
     [SerializeField]
     private Slider bgmVolumeSlider;
 
@@ -80,7 +80,12 @@ public sealed class StoryManager : MonoBehaviour
     private bool isMessageInterrupted = false;
     private bool isNextMessageRequested = false;
     private bool isBgmOn = true;
-    private bool isBGgmull = true;
+    private bool isBgmNull = true;
+
+    private void LogUnexpectedChapterError()
+    {
+        Debug.LogError("Unexpected number of next chapters");
+    }
 
     public void onSelection2Option1Click()
     {
@@ -136,6 +141,9 @@ public sealed class StoryManager : MonoBehaviour
         SetFourthNextBranch();
     }
 
+    /// <summary>
+    /// Pause or resume the game
+    /// </summary>
     public void Pause()
     {
         if (Time.timeScale == 1)
@@ -152,11 +160,14 @@ public sealed class StoryManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Switch the BGM on or off
+    /// </summary>
     public void SwitchBgm()
     {
         isBgmOn = !isBgmOn;
 
-        if (isBGgmull)
+        if (isBgmNull)
         {
             return;
         }
@@ -173,11 +184,17 @@ public sealed class StoryManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Change the volume of the BGM
+    /// </summary>
     public void onBgmVolumeSliderValueChanged()
     {
         audioSource.volume = bgmVolumeSlider.value;
     }
 
+    /// <summary>
+    /// Go back to the previous chapter
+    /// </summary>
     public void GoBack()
     {
         isMessageInterrupted = true;
@@ -185,11 +202,17 @@ public sealed class StoryManager : MonoBehaviour
         SetCurrentChapter(previousChapter);
     }
 
+    /// <summary>
+    /// Request the next message
+    /// </summary>
     public void RequestNextMessage()
     {
         isNextMessageRequested = true;
     }
 
+    /// <summary>
+    /// Set the name of the main character
+    /// </summary>
     public void onMainCharNameInputFieldEndEdit()
     {
         MainCharacterName = mainCharNameInputField.text;
@@ -281,7 +304,7 @@ public sealed class StoryManager : MonoBehaviour
 
         if (!ReferenceEquals(audioClip, null))
         {
-            isBGgmull = false;
+            isBgmNull = false;
 
             // If the audio clip is not the same as the current one, change it
             if (!ReferenceEquals(audioSource.clip, audioClip))
@@ -296,7 +319,7 @@ public sealed class StoryManager : MonoBehaviour
         }
         else
         {
-            isBGgmull = true;
+            isBgmNull = true;
             Debug.LogError("Background music is null");
             audioSource.Stop();
         }
@@ -308,7 +331,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         if (currentChapter.nextBranches.Length < 1)
         {
-            Debug.LogError("Unexpected number of next chapters");
+            LogUnexpectedChapterError();
             return;
         }
 
@@ -319,7 +342,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         if (currentChapter.nextBranches.Length < 2)
         {
-            Debug.LogError("Unexpected number of next chapters");
+            LogUnexpectedChapterError();
             return;
         }
 
@@ -330,7 +353,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         if (currentChapter.nextBranches.Length < 3)
         {
-            Debug.LogError("Unexpected number of next chapters");
+            LogUnexpectedChapterError();
             return;
         }
 
@@ -341,7 +364,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         if (currentChapter.nextBranches.Length < 4)
         {
-            Debug.LogError("Unexpected number of next chapters");
+            LogUnexpectedChapterError();
             return;
         }
 
@@ -350,38 +373,40 @@ public sealed class StoryManager : MonoBehaviour
 
     private void SetNextChapter()
     {
-        switch (currentChapter.nextBranches.Length)
+        Branch[] nextBranches = currentChapter.nextBranches;
+
+        switch (nextBranches.Length)
         {
             case 0:
                 break;
 
             case 1:
-                SetCurrentChapter(currentChapter.nextBranches[0].chapter);
+                SetCurrentChapter(nextBranches[0].chapter);
                 break;
 
             case 2:
                 selection2.SetActive(true);
-                selection2option1text.text = currentChapter.nextBranches[0].choiceMessage;
-                selection2option2text.text = currentChapter.nextBranches[1].choiceMessage;
+                selection2option1text.text = nextBranches[0].choiceMessage;
+                selection2option2text.text = nextBranches[1].choiceMessage;
                 break;
 
             case 3:
                 selection3.SetActive(true);
-                selection3option1text.text = currentChapter.nextBranches[0].choiceMessage;
-                selection3option2text.text = currentChapter.nextBranches[1].choiceMessage;
-                selection3option3text.text = currentChapter.nextBranches[2].choiceMessage;
+                selection3option1text.text = nextBranches[0].choiceMessage;
+                selection3option2text.text = nextBranches[1].choiceMessage;
+                selection3option3text.text = nextBranches[2].choiceMessage;
                 break;
 
             case 4:
                 selection4.SetActive(true);
-                selection4option1text.text = currentChapter.nextBranches[0].choiceMessage;
-                selection4option2text.text = currentChapter.nextBranches[1].choiceMessage;
-                selection4option3text.text = currentChapter.nextBranches[2].choiceMessage;
-                selection4option4text.text = currentChapter.nextBranches[3].choiceMessage;
+                selection4option1text.text = nextBranches[0].choiceMessage;
+                selection4option2text.text = nextBranches[1].choiceMessage;
+                selection4option3text.text = nextBranches[2].choiceMessage;
+                selection4option4text.text = nextBranches[3].choiceMessage;
                 break;
 
             default:
-                Debug.LogError("Unexpected number of next chapters");
+                LogUnexpectedChapterError();
                 break;
         }
     }
