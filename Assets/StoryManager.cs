@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public sealed class StoryManager : MonoBehaviour
 {
+    private static WaitForSeconds delay = new(0.1f);
+    
     private Chapter previousChapter;
     [SerializeField]
     private Chapter currentChapter;
@@ -77,8 +79,9 @@ public sealed class StoryManager : MonoBehaviour
 
     public int MessageIndex { get; private set; } = 0;
 
-    private bool isFinishMessage = false;
+    private bool isFinishMessage = true;
     private bool isMessageSkipRequested = false;
+    private bool isMessageInterrupted = false;
 
     public void onSelection2Option1Click()
     {
@@ -152,6 +155,8 @@ public sealed class StoryManager : MonoBehaviour
 
     public void GoBack()
     {
+        isMessageInterrupted = true;
+        message.text = "";
         SetCurrentChapter(previousChapter);
     }
 
@@ -325,11 +330,22 @@ public sealed class StoryManager : MonoBehaviour
 
     private IEnumerator TypeMessage(string messageContent)
     {
+        while (!isFinishMessage)
+        {
+            yield return delay;
+        }
+
         message.text = "";
         isFinishMessage = false;
 
         foreach (char letter in messageContent.ToCharArray())
         {
+            if (isMessageInterrupted)
+            {
+                isMessageInterrupted = false;
+                break;
+            }
+
             if (isMessageSkipRequested)
             {
                 message.text = messageContent;
@@ -338,7 +354,7 @@ public sealed class StoryManager : MonoBehaviour
             }
 
             message.text += letter;
-            yield return new WaitForSeconds(0.1f);
+            yield return delay;
         }
 
         isFinishMessage = true;
