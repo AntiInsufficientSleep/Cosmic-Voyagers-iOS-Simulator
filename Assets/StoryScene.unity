@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "BGM \u30AA\u30F3\uFF0F\u30AA\u30D5"
+  m_text: "BGM \u30AA\u30D5"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1794faf1d6d76f49ac8bb4043cc48be, type: 2}
   m_sharedMaterial: {fileID: -1471750096492094730, guid: c1794faf1d6d76f49ac8bb4043cc48be, type: 2}
@@ -1531,7 +1531,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1823231984}
         m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
-        m_MethodName: SwitchBGM
+        m_MethodName: SwitchBgm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4448,6 +4448,7 @@ MonoBehaviour:
   pauseButton: {fileID: 1917885412}
   pauseMenu: {fileID: 72457782}
   mainCharNameInputField: {fileID: 225295213}
+  bgmToggleButtonText: {fileID: 249313475}
   selection2: {fileID: 673275318}
   selection2option1text: {fileID: 1849455408}
   selection2option2text: {fileID: 1004110663}
