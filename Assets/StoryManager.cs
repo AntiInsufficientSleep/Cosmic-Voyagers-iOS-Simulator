@@ -273,11 +273,16 @@ public sealed class StoryManager : MonoBehaviour
         if (!ReferenceEquals(audioClip, null))
         {
             isBGgmull = false;
-            audioSource.clip = audioClip;
 
-            if (isBgmOn)
+            // If the audio clip is not the same as the current one, change it
+            if (!ReferenceEquals(audioSource.clip, audioClip))
             {
-                audioSource.Play();
+                audioSource.clip = audioClip;
+
+                if (isBgmOn)
+                {
+                    audioSource.Play();
+                }
             }
         }
         else
