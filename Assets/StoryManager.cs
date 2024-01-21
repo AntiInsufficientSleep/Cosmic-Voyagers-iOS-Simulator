@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public sealed class StoryManager : MonoBehaviour
 {
     private static WaitForSeconds delay = new(0.1f);
-    
+
     private Chapter previousChapter;
     [SerializeField]
     private Chapter currentChapter;
