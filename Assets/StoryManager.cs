@@ -188,7 +188,7 @@ public sealed class StoryManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (isNextMessageRequested)
         {
             isNextMessageRequested = false;
 
