@@ -10,6 +10,7 @@ public sealed class StoryManager : MonoBehaviour
     private const string bgmOffText = "BGM オフ";
 
     private Chapter previousChapter;
+
     [SerializeField]
     private Chapter currentChapter;
 
@@ -31,7 +32,6 @@ public sealed class StoryManager : MonoBehaviour
     [SerializeField]
     private GameObject pauseMenu;
 
-    
     [SerializeField]
     private Slider bgmVolumeSlider;
 
@@ -141,6 +141,9 @@ public sealed class StoryManager : MonoBehaviour
         SetFourthNextBranch();
     }
 
+    /// <summary>
+    /// Pause or resume the game
+    /// </summary>
     public void Pause()
     {
         if (Time.timeScale == 1)
@@ -157,6 +160,9 @@ public sealed class StoryManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Switch the BGM on or off
+    /// </summary>
     public void SwitchBgm()
     {
         isBgmOn = !isBgmOn;
@@ -178,11 +184,17 @@ public sealed class StoryManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Change the volume of the BGM
+    /// </summary>
     public void onBgmVolumeSliderValueChanged()
     {
         audioSource.volume = bgmVolumeSlider.value;
     }
 
+    /// <summary>
+    /// Go back to the previous chapter
+    /// </summary>
     public void GoBack()
     {
         isMessageInterrupted = true;
@@ -190,11 +202,17 @@ public sealed class StoryManager : MonoBehaviour
         SetCurrentChapter(previousChapter);
     }
 
+    /// <summary>
+    /// Request the next message
+    /// </summary>
     public void RequestNextMessage()
     {
         isNextMessageRequested = true;
     }
 
+    /// <summary>
+    /// Set the name of the main character
+    /// </summary>
     public void onMainCharNameInputFieldEndEdit()
     {
         MainCharacterName = mainCharNameInputField.text;
