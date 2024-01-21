@@ -191,7 +191,7 @@ public sealed class StoryManager : MonoBehaviour
             Debug.LogError("Character image is null");
         }
 
-        AudioClip audioClip = chapter.backGroundMusic.clip;
+        AudioClip audioClip = chapter.backGroundMusic;
 
         if (!ReferenceEquals(audioClip, null))
         {
