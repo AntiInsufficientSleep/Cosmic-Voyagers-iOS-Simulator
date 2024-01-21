@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public sealed class StoryManager : MonoBehaviour
 {
     private static WaitForSeconds delay = new(0.1f);
-    
+
     private Chapter previousChapter;
     [SerializeField]
     private Chapter currentChapter;
@@ -82,6 +82,7 @@ public sealed class StoryManager : MonoBehaviour
     private bool isFinishMessage = true;
     private bool isMessageSkipRequested = false;
     private bool isMessageInterrupted = false;
+    private bool isNextMessageRequested = false;
 
     public void onSelection2Option1Click()
     {
@@ -160,6 +161,11 @@ public sealed class StoryManager : MonoBehaviour
         SetCurrentChapter(previousChapter);
     }
 
+    public void RequestNextMessage()
+    {
+        isNextMessageRequested = true;
+    }
+
     private void Start()
     {
         SetCurrentChapter(currentChapter);
@@ -167,13 +173,25 @@ public sealed class StoryManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            isNextMessageRequested = true;
+        }
+
+        ProcessNextMessageRequest();
+    }
+
+    private void ProcessNextMessageRequest()
+    {
         if (Time.timeScale == 0)
         {
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (isNextMessageRequested)
         {
+            isNextMessageRequested = false;
+
             if (isFinishMessage)
             {
                 if (MessageIndex < currentChapter.messages.Length - 1)
