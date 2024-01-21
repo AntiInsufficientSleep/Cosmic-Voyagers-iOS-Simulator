@@ -31,6 +31,10 @@ public sealed class StoryManager : MonoBehaviour
     [SerializeField]
     private GameObject pauseMenu;
 
+    
+    [SerializeField]
+    private Slider bgmVolumeSlider;
+
     [SerializeField]
     private TMP_InputField mainCharNameInputField;
 
@@ -167,6 +171,11 @@ public sealed class StoryManager : MonoBehaviour
             audioSource.Stop();
             bgmToggleButtonText.text = bgmOnText;
         }
+    }
+
+    public void onBgmVolumeSliderValueChanged()
+    {
+        audioSource.volume = bgmVolumeSlider.value;
     }
 
     public void GoBack()
