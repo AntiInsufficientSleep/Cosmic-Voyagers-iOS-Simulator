@@ -30,6 +30,9 @@ public sealed class StoryManager : MonoBehaviour
     private GameObject pauseMenu;
 
     [SerializeField]
+    private TMP_InputField mainCharNameInputField;
+
+    [SerializeField]
     private GameObject selection2;
     [SerializeField]
     private Button selection2option1;
@@ -187,6 +190,11 @@ public sealed class StoryManager : MonoBehaviour
     public void RequestNextMessage()
     {
         isNextMessageRequested = true;
+    }
+
+    public void onMainCharNameInputFieldEndEdit()
+    {
+        MainCharacterName = mainCharNameInputField.text;
     }
 
     private void Start()
