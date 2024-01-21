@@ -82,6 +82,11 @@ public sealed class StoryManager : MonoBehaviour
     private bool isBgmOn = true;
     private bool isBGgmull = true;
 
+    private void LogUnexpectedChapterError()
+    {
+        Debug.LogError("Unexpected number of next chapters");
+    }
+
     public void onSelection2Option1Click()
     {
         selection2.SetActive(false);
@@ -308,7 +313,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         if (currentChapter.nextBranches.Length < 1)
         {
-            Debug.LogError("Unexpected number of next chapters");
+            LogUnexpectedChapterError();
             return;
         }
 
@@ -319,7 +324,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         if (currentChapter.nextBranches.Length < 2)
         {
-            Debug.LogError("Unexpected number of next chapters");
+            LogUnexpectedChapterError();
             return;
         }
 
@@ -330,7 +335,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         if (currentChapter.nextBranches.Length < 3)
         {
-            Debug.LogError("Unexpected number of next chapters");
+            LogUnexpectedChapterError();
             return;
         }
 
@@ -341,7 +346,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         if (currentChapter.nextBranches.Length < 4)
         {
-            Debug.LogError("Unexpected number of next chapters");
+            LogUnexpectedChapterError();
             return;
         }
 
@@ -383,7 +388,7 @@ public sealed class StoryManager : MonoBehaviour
                 break;
 
             default:
-                Debug.LogError("Unexpected number of next chapters");
+                LogUnexpectedChapterError();
                 break;
         }
     }
