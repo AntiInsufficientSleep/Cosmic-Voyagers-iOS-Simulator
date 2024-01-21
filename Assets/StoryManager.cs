@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public sealed class StoryManager : MonoBehaviour
 {
+    private Chapter previousChapter;
     [SerializeField]
     private Chapter currentChapter;
 
@@ -19,6 +20,12 @@ public sealed class StoryManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI characterName;
+
+    [SerializeField]
+    private GameObject pauseButton;
+
+    [SerializeField]
+    private GameObject pauseMenu;
 
     [SerializeField]
     private GameObject selection2;
@@ -64,7 +71,7 @@ public sealed class StoryManager : MonoBehaviour
     private Button selection4option4;
     [SerializeField]
     private TextMeshProUGUI selection4option4text;
-    
+
     [SerializeField]
     private AudioSource audioSource;
 
@@ -127,6 +134,27 @@ public sealed class StoryManager : MonoBehaviour
         SetFourthNextBranch();
     }
 
+    public void Pause()
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+            pauseButton.SetActive(false);
+            pauseMenu.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            pauseButton.SetActive(true);
+            pauseMenu.SetActive(false);
+        }
+    }
+
+    public void GoBack()
+    {
+        SetCurrentChapter(previousChapter);
+    }
+
     private void Start()
     {
         SetCurrentChapter(currentChapter);
@@ -134,6 +162,11 @@ public sealed class StoryManager : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (isFinishMessage)
@@ -169,7 +202,7 @@ public sealed class StoryManager : MonoBehaviour
         {
             Debug.LogError("Character image is null");
         }
-        
+
         characterName.text = message.CharacterName;
 
         StartCoroutine(TypeMessage(message.Content));
@@ -177,6 +210,7 @@ public sealed class StoryManager : MonoBehaviour
 
     private void SetCurrentChapter(Chapter chapter)
     {
+        previousChapter = currentChapter;
         MessageIndex = 0;
         currentChapter = chapter;
 
@@ -188,7 +222,7 @@ public sealed class StoryManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Character image is null");
+            Debug.LogError("Background image is null");
         }
 
         AudioClip audioClip = chapter.backGroundMusic;
@@ -203,7 +237,7 @@ public sealed class StoryManager : MonoBehaviour
             Debug.LogError("Background music is null");
             audioSource.Stop();
         }
-        
+
         SetMessage();
     }
 
