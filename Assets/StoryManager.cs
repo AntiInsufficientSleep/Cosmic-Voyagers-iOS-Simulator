@@ -83,6 +83,8 @@ public sealed class StoryManager : MonoBehaviour
     private bool isMessageSkipRequested = false;
     private bool isMessageInterrupted = false;
     private bool isNextMessageRequested = false;
+    private bool isBGMOn = true;
+    private bool isBGMNull = true;
 
     public void onSelection2Option1Click()
     {
@@ -151,6 +153,25 @@ public sealed class StoryManager : MonoBehaviour
             Time.timeScale = 1;
             pauseButton.SetActive(true);
             pauseMenu.SetActive(false);
+        }
+    }
+
+    public void SwitchBGM()
+    {
+        isBGMOn = !isBGMOn;
+
+        if (isBGMNull)
+        {
+            return;
+        }
+
+        if (isBGMOn)
+        {
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.Stop();
         }
     }
 
@@ -252,11 +273,17 @@ public sealed class StoryManager : MonoBehaviour
 
         if (!ReferenceEquals(audioClip, null))
         {
+            isBGMNull = false;
             audioSource.clip = audioClip;
-            audioSource.Play();
+
+            if (isBGMOn)
+            {
+                audioSource.Play();
+            }
         }
         else
         {
+            isBGMNull = true;
             Debug.LogError("Background music is null");
             audioSource.Stop();
         }
