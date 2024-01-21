@@ -1015,7 +1015,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1823231984}
+        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+        m_MethodName: onMainCharNameInputFieldEndEdit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -4437,25 +4449,16 @@ MonoBehaviour:
   pauseMenu: {fileID: 72457782}
   mainCharNameInputField: {fileID: 225295213}
   selection2: {fileID: 673275318}
-  selection2option1: {fileID: 1603612332}
   selection2option1text: {fileID: 1849455408}
-  selection2option2: {fileID: 1563881259}
   selection2option2text: {fileID: 1004110663}
   selection3: {fileID: 1905790987}
-  selection3option1: {fileID: 1569572513}
   selection3option1text: {fileID: 274651879}
-  selection3option2: {fileID: 150490733}
   selection3option2text: {fileID: 1935408211}
-  selection3option3: {fileID: 22649059}
   selection3option3text: {fileID: 602372924}
   selection4: {fileID: 901368885}
-  selection4option1: {fileID: 1896905761}
   selection4option1text: {fileID: 851577806}
-  selection4option2: {fileID: 88236371}
   selection4option2text: {fileID: 1546849245}
-  selection4option3: {fileID: 1448261741}
   selection4option3text: {fileID: 1935187434}
-  selection4option4: {fileID: 1243767111}
   selection4option4text: {fileID: 1593475642}
   audioSource: {fileID: 1845066888}
 --- !u!1 &1837906153
@@ -4687,7 +4690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845066887}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.664146, y: 0.0144075975, z: 1866.7892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5692,5 +5695,5 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1837906157}
   - {fileID: 213784924}
-  - {fileID: 1823231983}
   - {fileID: 1845066889}
+  - {fileID: 1823231983}
