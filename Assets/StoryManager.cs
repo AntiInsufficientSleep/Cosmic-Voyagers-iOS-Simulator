@@ -350,34 +350,36 @@ public sealed class StoryManager : MonoBehaviour
 
     private void SetNextChapter()
     {
-        switch (currentChapter.nextBranches.Length)
+        Branch[] nextBranches = currentChapter.nextBranches;
+
+        switch (nextBranches.Length)
         {
             case 0:
                 break;
 
             case 1:
-                SetCurrentChapter(currentChapter.nextBranches[0].chapter);
+                SetCurrentChapter(nextBranches[0].chapter);
                 break;
 
             case 2:
                 selection2.SetActive(true);
-                selection2option1text.text = currentChapter.nextBranches[0].choiceMessage;
-                selection2option2text.text = currentChapter.nextBranches[1].choiceMessage;
+                selection2option1text.text = nextBranches[0].choiceMessage;
+                selection2option2text.text = nextBranches[1].choiceMessage;
                 break;
 
             case 3:
                 selection3.SetActive(true);
-                selection3option1text.text = currentChapter.nextBranches[0].choiceMessage;
-                selection3option2text.text = currentChapter.nextBranches[1].choiceMessage;
-                selection3option3text.text = currentChapter.nextBranches[2].choiceMessage;
+                selection3option1text.text = nextBranches[0].choiceMessage;
+                selection3option2text.text = nextBranches[1].choiceMessage;
+                selection3option3text.text = nextBranches[2].choiceMessage;
                 break;
 
             case 4:
                 selection4.SetActive(true);
-                selection4option1text.text = currentChapter.nextBranches[0].choiceMessage;
-                selection4option2text.text = currentChapter.nextBranches[1].choiceMessage;
-                selection4option3text.text = currentChapter.nextBranches[2].choiceMessage;
-                selection4option4text.text = currentChapter.nextBranches[3].choiceMessage;
+                selection4option1text.text = nextBranches[0].choiceMessage;
+                selection4option2text.text = nextBranches[1].choiceMessage;
+                selection4option3text.text = nextBranches[2].choiceMessage;
+                selection4option4text.text = nextBranches[3].choiceMessage;
                 break;
 
             default:
