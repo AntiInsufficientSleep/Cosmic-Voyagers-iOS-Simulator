@@ -128,6 +128,23 @@ public sealed class StoryManager : MonoBehaviour
         SetFourthNextBranch();
     }
 
+    public void Pause()
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+
+    public void GoBack()
+    {
+        SetCurrentChapter(previousChapter);
+    }
+
     private void Start()
     {
         SetCurrentChapter(currentChapter);
@@ -170,7 +187,7 @@ public sealed class StoryManager : MonoBehaviour
         {
             Debug.LogError("Character image is null");
         }
-        
+
         characterName.text = message.CharacterName;
 
         StartCoroutine(TypeMessage(message.Content));
@@ -205,7 +222,7 @@ public sealed class StoryManager : MonoBehaviour
             Debug.LogError("Background music is null");
             audioSource.Stop();
         }
-        
+
         SetMessage();
     }
 
