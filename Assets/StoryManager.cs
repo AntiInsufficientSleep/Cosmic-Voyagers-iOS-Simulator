@@ -64,6 +64,9 @@ public sealed class StoryManager : MonoBehaviour
     private Button selection4option4;
     [SerializeField]
     private TextMeshProUGUI selection4option4text;
+    
+    [SerializeField]
+    private AudioSource audioSource;
 
     public int MessageIndex { get; private set; } = 0;
 
