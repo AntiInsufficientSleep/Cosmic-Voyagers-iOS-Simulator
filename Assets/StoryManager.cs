@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public sealed class StoryManager : MonoBehaviour
 {
     private static readonly WaitForSeconds delay = new(0.1f);
+    private const string bgmOnText = "BGM オン";
+    private const string bgmOffText = "BGM オフ";
 
     private Chapter previousChapter;
     [SerializeField]
@@ -31,6 +33,9 @@ public sealed class StoryManager : MonoBehaviour
 
     [SerializeField]
     private TMP_InputField mainCharNameInputField;
+
+    [SerializeField]
+    private TextMeshProUGUI bgmToggleButtonText;
 
     [SerializeField]
     private GameObject selection2;
@@ -155,10 +160,12 @@ public sealed class StoryManager : MonoBehaviour
         if (isBgmOn)
         {
             audioSource.Play();
+            bgmToggleButtonText.text = bgmOffText;
         }
         else
         {
             audioSource.Stop();
+            bgmToggleButtonText.text = bgmOnText;
         }
     }
 
