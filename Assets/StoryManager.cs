@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public sealed class StoryManager : MonoBehaviour
 {
+    private Chapte previousChapter;
     [SerializeField]
     private Chapter currentChapter;
 
@@ -177,6 +178,7 @@ public sealed class StoryManager : MonoBehaviour
 
     private void SetCurrentChapter(Chapter chapter)
     {
+        previousChapter = currentChapter;
         MessageIndex = 0;
         currentChapter = chapter;
 
