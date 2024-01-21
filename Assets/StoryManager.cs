@@ -161,6 +161,11 @@ public sealed class StoryManager : MonoBehaviour
         SetCurrentChapter(previousChapter);
     }
 
+    public void RequestNextMessage()
+    {
+        isNextMessageRequested = true;
+    }
+
     private void Start()
     {
         SetCurrentChapter(currentChapter);
