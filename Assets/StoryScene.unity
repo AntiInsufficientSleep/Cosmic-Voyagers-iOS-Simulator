@@ -2754,6 +2754,7 @@ MonoBehaviour:
   selection4option3text: {fileID: 1935187434}
   selection4option4: {fileID: 1243767111}
   selection4option4text: {fileID: 1593475642}
+  audioSource: {fileID: 1845066888}
 --- !u!1 &1837906153
 GameObject:
   m_ObjectHideFlags: 0
