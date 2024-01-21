@@ -76,7 +76,7 @@ public sealed class StoryManager : MonoBehaviour
     private bool isMessageInterrupted = false;
     private bool isNextMessageRequested = false;
     private bool isBgmOn = true;
-    private bool isBGgmull = true;
+    private bool isBgmNull = true;
 
     public void onSelection2Option1Click()
     {
@@ -152,7 +152,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         isBgmOn = !isBgmOn;
 
-        if (isBGgmull)
+        if (isBgmNull)
         {
             return;
         }
@@ -272,7 +272,7 @@ public sealed class StoryManager : MonoBehaviour
 
         if (!ReferenceEquals(audioClip, null))
         {
-            isBGgmull = false;
+            isBgmNull = false;
 
             // If the audio clip is not the same as the current one, change it
             if (!ReferenceEquals(audioSource.clip, audioClip))
@@ -287,7 +287,7 @@ public sealed class StoryManager : MonoBehaviour
         }
         else
         {
-            isBGgmull = true;
+            isBgmNull = true;
             Debug.LogError("Background music is null");
             audioSource.Stop();
         }
