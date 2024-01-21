@@ -1,4 +1,6 @@
-[System.Serializable]
+using System;
+
+[Serializable]
 public class Branch
 {
     public string choiceMessage;
