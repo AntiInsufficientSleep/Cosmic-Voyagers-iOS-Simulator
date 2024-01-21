@@ -1459,7 +1459,7 @@ GameObject:
   - component: {fileID: 490593447}
   - component: {fileID: 490593446}
   m_Layer: 5
-  m_Name: SwitchBGM
+  m_Name: BgmToggleButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4580,7 +4580,7 @@ GameObject:
   - component: {fileID: 1845066889}
   - component: {fileID: 1845066888}
   m_Layer: 0
-  m_Name: BGMPlayer
+  m_Name: BgmPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
