@@ -207,7 +207,7 @@ public sealed class StoryManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Character image is null");
+            Debug.LogError("Background image is null");
         }
 
         AudioClip audioClip = chapter.backGroundMusic;
