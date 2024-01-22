@@ -56,7 +56,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         _isMessageInterrupted = true;
         message.text = "";
-        SetCurrentChapter(_previousChapter);
+        SetCurrentChapter(_previousChapter, true);
     }
 
     /// <summary>
@@ -142,9 +142,12 @@ public sealed class StoryManager : MonoBehaviour
         StartCoroutine(TypeMessage(message.Content.Replace("[主人公の名前]", MainCharacterName)));
     }
 
-    private void SetCurrentChapter(Chapter chapter)
+    private void SetCurrentChapter(Chapter chapter, bool isFromGoBack = false)
     {
-        _previousChapter = currentChapter;
+        if (!isFromGoBack)
+        {
+            _previousChapter = currentChapter;
+        }
         MessageIndex = 0;
         currentChapter = chapter;
 
