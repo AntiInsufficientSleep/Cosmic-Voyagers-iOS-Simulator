@@ -33,6 +33,7 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           unityVersion: '2022.3.17f1'
+          targetPlatform: WebGL
 
       - name: Set enviroments
         run: |
