@@ -3607,8 +3607,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+      - m_Target: {fileID: 2044196580}
+        m_TargetAssemblyTypeName: BgmManager, Assembly-CSharp
         m_MethodName: onBgmVolumeSliderValueChanged
         m_Mode: 1
         m_Arguments:
