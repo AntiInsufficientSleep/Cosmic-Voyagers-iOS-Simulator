@@ -35,6 +35,12 @@ jobs:
           unityVersion: '2022.3.17f1'
           targetPlatform: WebGL
 
+      - name: Upload Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build-WebGL
+          path: build/WebGL
+
       - name: Set enviroments
         run: |
           REPO_NAME=$(echo ${{ github.repository }} | sed -e "s#.*/##")
