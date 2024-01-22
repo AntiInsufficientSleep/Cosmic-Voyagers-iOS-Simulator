@@ -218,11 +218,13 @@ public sealed class StoryManager : MonoBehaviour
         MainCharacterName = mainCharNameInputField.text;
     }
 
+    // Start is called before the first frame update
     private void Start()
     {
         SetCurrentChapter(currentChapter);
     }
 
+    // Update is called once per frame
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
