@@ -669,7 +669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 672715872}
-  selection2: {fileID: 1849455406}
+  selection2: {fileID: 673275318}
   selection2option1text: {fileID: 1849455408}
   selection2option2text: {fileID: 1004110663}
   selection3: {fileID: 1569572511}
