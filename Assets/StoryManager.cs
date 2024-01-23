@@ -148,6 +148,7 @@ public sealed class StoryManager : MonoBehaviour
         {
             _previousChapter = currentChapter;
         }
+        
         MessageIndex = 0;
         currentChapter = chapter;
 
