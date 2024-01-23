@@ -94,7 +94,7 @@ public sealed class StoryManager : MonoBehaviour
 
     private void ProcessNextMessageRequest()
     {
-        if (Time.timeScale == 0)
+        if (gameManager.PauseManager.IsPaused)
         {
             return;
         }
@@ -148,7 +148,7 @@ public sealed class StoryManager : MonoBehaviour
         {
             _previousChapter = currentChapter;
         }
-        
+
         MessageIndex = 0;
         currentChapter = chapter;
 
