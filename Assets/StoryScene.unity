@@ -206,8 +206,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+      - m_Target: {fileID: 122440434}
+        m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
         m_MethodName: onSelection3Option3Click
         m_Mode: 1
         m_Arguments:
@@ -514,8 +514,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+      - m_Target: {fileID: 122440434}
+        m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
         m_MethodName: onSelection4Option2Click
         m_Mode: 1
         m_Arguments:
@@ -639,6 +639,63 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &122440433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 122440435}
+  - component: {fileID: 122440434}
+  m_Layer: 0
+  m_Name: SelectionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &122440434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122440433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e210d59878d5a164c8d755a2baf898f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 672715872}
+  selection2: {fileID: 673275318}
+  selection2option1text: {fileID: 1849455408}
+  selection2option2text: {fileID: 1004110663}
+  selection3: {fileID: 1905790987}
+  selection3option1text: {fileID: 274651879}
+  selection3option2text: {fileID: 1935408211}
+  selection3option3text: {fileID: 602372924}
+  selection4: {fileID: 901368885}
+  selection4option1text: {fileID: 851577806}
+  selection4option2text: {fileID: 1546849245}
+  selection4option3text: {fileID: 1935187434}
+  selection4option4text: {fileID: 1593475642}
+--- !u!4 &122440435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122440433}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 867740600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &142747883
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,8 +854,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+      - m_Target: {fileID: 122440434}
+        m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
         m_MethodName: onSelection3Option2Click
         m_Mode: 1
         m_Arguments:
@@ -1114,7 +1171,7 @@ GameObject:
   - component: {fileID: 249313476}
   - component: {fileID: 249313475}
   m_Layer: 5
-  m_Name: Text
+  m_Name: BgmToggleButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1676,9 +1733,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
-        m_MethodName: SwitchBgm
+      - m_Target: {fileID: 2044196580}
+        m_TargetAssemblyTypeName: BgmManager, Assembly-CSharp
+        m_MethodName: ToggleBgm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2563,6 +2620,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607571398}
   m_CullTransparentMesh: 1
+--- !u!1 &672715871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 672715873}
+  - component: {fileID: 672715872}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &672715872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672715871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c4f5c1725b5bd449d80acd3f433e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmManager: {fileID: 2044196580}
+  pauseManager: {fileID: 2001186098}
+  selectionManager: {fileID: 122440434}
+  storyManager: {fileID: 1823231984}
+--- !u!4 &672715873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672715871}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &673275318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2734,6 +2839,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851577804}
   m_CullTransparentMesh: 1
+--- !u!1 &867740599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 867740600}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &867740600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867740599}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2044196581}
+  - {fileID: 2001186099}
+  - {fileID: 1823231983}
+  - {fileID: 122440435}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &901368885
 GameObject:
   m_ObjectHideFlags: 0
@@ -2987,7 +3127,7 @@ GameObject:
   - component: {fileID: 996259825}
   - component: {fileID: 996259824}
   m_Layer: 5
-  m_Name: Text
+  m_Name: PauseButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3467,8 +3607,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+      - m_Target: {fileID: 2044196580}
+        m_TargetAssemblyTypeName: BgmManager, Assembly-CSharp
         m_MethodName: onBgmVolumeSliderValueChanged
         m_Mode: 1
         m_Arguments:
@@ -3562,8 +3702,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+      - m_Target: {fileID: 122440434}
+        m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
         m_MethodName: onSelection4Option4Click
         m_Mode: 1
         m_Arguments:
@@ -3984,8 +4124,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+      - m_Target: {fileID: 122440434}
+        m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
         m_MethodName: onSelection4Option3Click
         m_Mode: 1
         m_Arguments:
@@ -4383,8 +4523,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+      - m_Target: {fileID: 122440434}
+        m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
         m_MethodName: onSelection2Option2Click
         m_Mode: 1
         m_Arguments:
@@ -4516,8 +4656,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+      - m_Target: {fileID: 122440434}
+        m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
         m_MethodName: onSelection3Option1Click
         m_Mode: 1
         m_Arguments:
@@ -4916,8 +5056,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+      - m_Target: {fileID: 122440434}
+        m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
         m_MethodName: onSelection2Option1Click
         m_Mode: 1
         m_Arguments:
@@ -4991,12 +5131,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823231981}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.33029446, y: -1.1813935, z: 1262.8152}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 867740600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1823231984
 MonoBehaviour:
@@ -5010,29 +5150,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ae76f2d86681f4dbed827686c43e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 672715872}
   currentChapter: {fileID: 11400000, guid: d8f71a8aa5a7a0e40acccc9e1c6f29c5, type: 2}
   background: {fileID: 1885092610}
   characterImage: {fileID: 105165572}
   message: {fileID: 542765647}
   characterName: {fileID: 496870861}
-  pauseButton: {fileID: 1917885412}
-  pauseMenu: {fileID: 72457782}
-  bgmVolumeSlider: {fileID: 1181576670}
+  mainCharacterName: "\u3051\u3093\u3068"
   mainCharNameInputField: {fileID: 225295213}
-  bgmToggleButtonText: {fileID: 249313475}
-  selection2: {fileID: 673275318}
-  selection2option1text: {fileID: 1849455408}
-  selection2option2text: {fileID: 1004110663}
-  selection3: {fileID: 1905790987}
-  selection3option1text: {fileID: 274651879}
-  selection3option2text: {fileID: 1935408211}
-  selection3option3text: {fileID: 602372924}
-  selection4: {fileID: 901368885}
-  selection4option1text: {fileID: 851577806}
-  selection4option2text: {fileID: 1546849245}
-  selection4option3text: {fileID: 1935187434}
-  selection4option4text: {fileID: 1593475642}
-  audioSource: {fileID: 1845066888}
 --- !u!1 &1827008345
 GameObject:
   m_ObjectHideFlags: 0
@@ -5300,7 +5425,7 @@ Transform:
   m_GameObject: {fileID: 1845066887}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.664146, y: 0.0144075975, z: 1866.7892}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5675,8 +5800,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+      - m_Target: {fileID: 122440434}
+        m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
         m_MethodName: onSelection4Option1Click
         m_Mode: 1
         m_Arguments:
@@ -5846,9 +5971,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
-        m_MethodName: Pause
+      - m_Target: {fileID: 2001186098}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6164,6 +6289,101 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935408209}
   m_CullTransparentMesh: 1
+--- !u!1 &2001186097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001186099}
+  - component: {fileID: 2001186098}
+  m_Layer: 0
+  m_Name: PauseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2001186098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001186097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8b206d4de42374bb7ce1cf188eee8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 672715872}
+  pauseButton: {fileID: 1917885412}
+  pauseMenuUI: {fileID: 72457782}
+--- !u!4 &2001186099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001186097}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 867740600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2044196579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2044196581}
+  - component: {fileID: 2044196580}
+  m_Layer: 0
+  m_Name: BgmManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2044196580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044196579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f5429d97f98d9458ded34a5d9ab7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 672715872}
+  bgmVolumeSlider: {fileID: 1181576670}
+  bgmToggleButtonText: {fileID: 249313475}
+  audioSource: {fileID: 1845066888}
+--- !u!4 &2044196581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044196579}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 867740600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2100101453
 GameObject:
   m_ObjectHideFlags: 0
@@ -6247,9 +6467,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823231984}
-        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
-        m_MethodName: Pause
+      - m_Target: {fileID: 2001186098}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6305,4 +6525,5 @@ SceneRoots:
   - {fileID: 1837906157}
   - {fileID: 213784924}
   - {fileID: 1845066889}
-  - {fileID: 1823231983}
+  - {fileID: 672715873}
+  - {fileID: 867740600}
