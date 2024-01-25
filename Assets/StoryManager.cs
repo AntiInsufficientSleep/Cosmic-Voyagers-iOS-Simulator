@@ -169,59 +169,17 @@ public sealed class StoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Set the first next branch.
+    /// Set the next branch by index.
     /// </summary>
-    public void SetFirstNextBranch()
+    public void SetNextBranch(int index)
     {
-        if (currentChapter.nextBranches.Length < 1)
+        if (currentChapter.nextBranches.Length < index + 1)
         {
             LogUnexpectedChapterError();
             return;
         }
 
-        SetCurrentChapter(currentChapter.nextBranches[0].chapter);
-    }
-
-    /// <summary>
-    /// Set the second next branch.
-    /// </summary>
-    public void SetSecondNextBranch()
-    {
-        if (currentChapter.nextBranches.Length < 2)
-        {
-            LogUnexpectedChapterError();
-            return;
-        }
-
-        SetCurrentChapter(currentChapter.nextBranches[1].chapter);
-    }
-
-    /// <summary>
-    /// Set the third next branch.
-    /// </summary>
-    public void SetThirdNextBranch()
-    {
-        if (currentChapter.nextBranches.Length < 3)
-        {
-            LogUnexpectedChapterError();
-            return;
-        }
-
-        SetCurrentChapter(currentChapter.nextBranches[2].chapter);
-    }
-
-    /// <summary>
-    /// Set the fourth next branch.
-    /// </summary>
-    public void SetFourthNextBranch()
-    {
-        if (currentChapter.nextBranches.Length < 4)
-        {
-            LogUnexpectedChapterError();
-            return;
-        }
-
-        SetCurrentChapter(currentChapter.nextBranches[3].chapter);
+        SetCurrentChapter(currentChapter.nextBranches[index].chapter);
     }
 
     private void SetNextChapter()
