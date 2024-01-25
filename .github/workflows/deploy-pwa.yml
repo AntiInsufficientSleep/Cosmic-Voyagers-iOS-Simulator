@@ -19,6 +19,7 @@ jobs:
           git remote add pwa https://github.com/AntiInsufficientSleep/Cosmic-Voyagers-PWA.git
           git fetch pwa
           git checkout -b pwa pwa/main
+          git remote
           git merge main
 #          if git merge main; then
 #            echo "Merge succeeded, continuing with the next steps."
