@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Manage the game.
 /// </summary>
-public class GameManager : MonoBehaviour
+public sealed class GameManager : MonoBehaviour
 {
     [SerializeField]
     private BgmManager bgmManager;
