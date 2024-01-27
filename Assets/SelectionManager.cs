@@ -39,55 +39,55 @@ public sealed class SelectionManager : MonoBehaviour
     public void onSelection2Option1Click()
     {
         selection2.SetActive(false);
-        gameManager.StoryManager.SetFirstNextBranch();
+        gameManager.StoryManager.SetNextBranch(1);
     }
 
     public void onSelection2Option2Click()
     {
         selection2.SetActive(false);
-        gameManager.StoryManager.SetSecondNextBranch();
+        gameManager.StoryManager.SetNextBranch(2);
     }
 
     public void onSelection3Option1Click()
     {
         selection3.SetActive(false);
-        gameManager.StoryManager.SetFirstNextBranch();
+        gameManager.StoryManager.SetNextBranch(1);
     }
 
     public void onSelection3Option2Click()
     {
         selection3.SetActive(false);
-        gameManager.StoryManager.SetSecondNextBranch();
+        gameManager.StoryManager.SetNextBranch(2);
     }
 
     public void onSelection3Option3Click()
     {
         selection3.SetActive(false);
-        gameManager.StoryManager.SetThirdNextBranch();
+        gameManager.StoryManager.SetNextBranch(3);
     }
 
     public void onSelection4Option1Click()
     {
         selection4.SetActive(false);
-        gameManager.StoryManager.SetFirstNextBranch();
+        gameManager.StoryManager.SetNextBranch(1);
     }
 
     public void onSelection4Option2Click()
     {
         selection4.SetActive(false);
-        gameManager.StoryManager.SetSecondNextBranch();
+        gameManager.StoryManager.SetNextBranch(2);
     }
 
     public void onSelection4Option3Click()
     {
         selection4.SetActive(false);
-        gameManager.StoryManager.SetThirdNextBranch();
+        gameManager.StoryManager.SetNextBranch(3);
     }
 
     public void onSelection4Option4Click()
     {
         selection4.SetActive(false);
-        gameManager.StoryManager.SetFourthNextBranch();
+        gameManager.StoryManager.SetNextBranch(4);
     }
 
     public void SetSelection(string option1, string option2)
