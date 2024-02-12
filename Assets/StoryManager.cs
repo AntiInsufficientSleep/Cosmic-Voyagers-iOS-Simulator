@@ -42,7 +42,6 @@ public sealed class StoryManager : MonoBehaviour
     private bool _isMessageSkipRequested = false;
     private bool _isMessageInterrupted = false;
     private bool _isNextMessageRequested = false;
-    private Chapter _previousChapter;
 
     private void LogUnexpectedChapterError()
     {
@@ -56,7 +55,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         _isMessageInterrupted = true;
         message.text = "";
-        SetCurrentChapter(_previousChapter, true);
+        SetCurrentChapter(currentChapter.PreviousChapter, true);
     }
 
     /// <summary>
@@ -146,7 +145,7 @@ public sealed class StoryManager : MonoBehaviour
     {
         if (!isFromGoBack)
         {
-            _previousChapter = currentChapter;
+            chapter.PreviousChapter = currentChapter;
         }
 
         MessageIndex = 0;
@@ -245,3 +244,4 @@ public sealed class StoryManager : MonoBehaviour
         _isFinishMessage = true;
     }
 }
+
