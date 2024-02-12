@@ -9,4 +9,3 @@ public sealed class Chapter : ScriptableObject
     public Message[] messages;
     public Branch[] nextBranches = Array.Empty<Branch>();
 }
-
