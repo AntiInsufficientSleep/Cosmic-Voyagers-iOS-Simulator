@@ -163,6 +163,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: space.cosmicvoyagers
     Standalone: com.DefaultCompany.2DProject
+    iPhone: space.cosmic-voyagers
   buildNumber:
     Standalone: 0
     VisionOS: 0
