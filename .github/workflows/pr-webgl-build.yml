@@ -57,7 +57,7 @@ jobs:
           publish_dir: ./build/WebGL/WebGL
           keep_files: true
           destination_dir: ${{ env.DEPLOY_PATH }}
-          cname: pwa.cosmic-voyagers.space
+          cname: www.cosmic-voyagers.space
 
       - name: Comment PR with Deploy URL
         uses: actions/github-script@v7
