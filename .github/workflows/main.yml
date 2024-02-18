@@ -71,6 +71,12 @@ jobs:
         run: |
           cp -R build/WebGL/WebGL/* deploy/
 
+      - name: Copy Privacy Policy to Deploy Directory
+        if: matrix.targetPlatform == 'WebGL'
+        run : |
+          mkdir deploy/PlayStore
+          cp AppleAppStorePrivacyPolicy.md deploy/AppStore/PrivacyPolicy.md
+
       - name: Deploy to GitHub Pages
         if: matrix.targetPlatform == 'WebGL'
         uses: peaceiris/actions-gh-pages@v3
