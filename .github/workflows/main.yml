@@ -68,4 +68,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/WebGL/WebGL
           keep_files: true
+          enable_jekyll: true
           cname: www.cosmic-voyagers.space
