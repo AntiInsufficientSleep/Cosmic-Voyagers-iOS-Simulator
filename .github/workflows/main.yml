@@ -71,7 +71,7 @@ jobs:
         run: |
           cp -R build/WebGL/WebGL/* deploy/
 
-      - name: Copy Privacy Policy to Deploy Directory
+      - name: Copy App Store Privacy Policy to Deploy Directory
         if: matrix.targetPlatform == 'WebGL'
         run : |
           mkdir deploy/AppStore
