@@ -74,7 +74,7 @@ jobs:
       - name: Copy Privacy Policy to Deploy Directory
         if: matrix.targetPlatform == 'WebGL'
         run : |
-          mkdir deploy/PlayStore
+          mkdir deploy/AppStore
           cp AppleAppStorePrivacyPolicy.md deploy/AppStore/PrivacyPolicy.md
 
       - name: Deploy to GitHub Pages
